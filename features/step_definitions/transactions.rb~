@@ -1,0 +1,12 @@
+Then(/^I should see add account$/) do
+   assert page.body =~ /(.*)Add account(.*)/m
+end
+
+Then(/^I should see show balance$/) do
+  assert page.body =~ /(.*)Show balance(.*)/m
+end
+
+Then(/^I should see manage transactions$/) do
+	assert page.body =~ /(.*)Manage transactions(.*)/m
+end
+
