@@ -24,7 +24,7 @@ RSpec.describe Account, :type => :model do
   end
 
   describe "filter_by_type" do
-     it "should filter by city Asset" do
+     it "should filter by Asset" do
         results=Account.filter_by_type(["Asset"])
         expect(results.count).to eq(4)
         expect(results.first.balance).to eq(1000)
@@ -50,6 +50,11 @@ RSpec.describe Account, :type => :model do
      it "should work for more than one type" do
         results=Account.get_type_balance(["Asset","Expense"])
         expect(results).to eq(25000)
+     end
+
+     it "should call filter_by_type" do
+        Account.should_receive(:filter_by_type).with('Asset')
+        Account.get_type_balance(["Asset"])
      end
   end
 

@@ -3,8 +3,16 @@ require "rails_helper"
 RSpec.describe AccountsController, :type => :routing do
   describe "routing" do
 
-    it "routes to #index" do
-      expect(:get => "/accounts").to route_to("accounts#index")
+    it "routes to #home_page" do
+      expect(:get => "/accounts").to route_to("accounts#home_page")
+    end
+
+    it "routes to #show_balance" do
+      expect(:get => "/accounts/show_balance").to route_to("accounts#show_balance")
+    end
+
+    it "routes to #make_transaction" do
+      expect(:post => "/accounts/make_transaction").to route_to("accounts#make_transaction")
     end
 
     it "routes to #new" do
