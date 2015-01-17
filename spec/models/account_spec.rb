@@ -4,11 +4,11 @@ RSpec.describe Account, :type => :model do
 
   let(:account) { FactoryGirl.create(:account) }
 
-  it { should respond_to(:name) }
-  it { should respond_to(:balance) }
-  it { should respond_to(:type) }
+  it { expect respond_to(:name) }
+  it { expect respond_to(:balance) }
+  it { expect respond_to(:type) }
   
-  it { should be_valid }
+  it { expect be_valid }
 
   describe "ran the seed file" do
     it "should return 10 for number of accounts records" do
@@ -53,7 +53,7 @@ RSpec.describe Account, :type => :model do
      end
 
      it "should call filter_by_type" do
-        Account.should_receive(:filter_by_type).with('Asset')
+        Account.expect_receive(:filter_by_type).with('Asset')
         Account.get_type_balance(["Asset"])
      end
   end
