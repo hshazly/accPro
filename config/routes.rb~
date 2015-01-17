@@ -2,7 +2,7 @@ AccProApp::Application.routes.draw do
   # The priority is based upon order of creation:
   # first created -> highest priority.
 	match 'accounts/show_balance' => 'accounts#show_balance'
-	match 'accounts/show/:id' => 'accounts#show'
+	match 'accounts/show/:id' => 'accounts#show_balance'
   # Sample of regular route:
   #   match 'products/:id' => 'catalog#view'
   # Keep in mind you can assign values other than :controller and :action

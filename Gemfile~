@@ -12,6 +12,7 @@ gem 'cancan'
 gem 'seed_dump'
 
 gem "less-rails"
+gem "twitter-bootstrap-rails"
 
 # for Heroku deployment - as described in Ap. A of ELLS book
 group :development, :test do

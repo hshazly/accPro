@@ -1,0 +1,17 @@
+<h2> Accounts Balances</h2>
+
+<table border="1" style="background-color:red ">
+  <tr>
+    <th>Name</th>
+    <th>Type</th>
+    <th>Balance</th>
+  </tr>
+
+<% @accounts.each do |account| %>
+  <tr>
+    <td><%= account.name %></td>
+    <td><%= account.account_type %></td>
+    <td><%= account.balance %></td>
+  </tr>
+<% end %>
+</table>

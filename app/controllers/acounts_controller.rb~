@@ -1,2 +1,5 @@
 class AcountsController < ApplicationController
+	def show_balance
+		@account = Account.all()
+	end
 end

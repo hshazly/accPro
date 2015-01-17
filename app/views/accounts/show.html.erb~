@@ -1,0 +1,9 @@
+<h2> Account: <%= @account.name %></h2>
+
+<div style="font-size:16px">
+ Name : <%=@account.name %></td>
+<br/>
+ Type :<%= @account.account_type %></td>
+<br/>
+Balance : <%= @account.balance %></td>
+</table>
