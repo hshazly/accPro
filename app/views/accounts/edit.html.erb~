@@ -1,0 +1,19 @@
+<h2> Edit Account</h2>
+
+<%= form_for(@account) do |f| %>
+  <div class="field">
+    <%= f.label :name %>
+    <%= f.text_field :name %>
+  </div>
+  <div class="field">
+    <%= f.label :Type %>
+    <%= f.select :account_type , options_for_select(%w[Assets Liability Expense Equity]) %>
+  </div>
+  <div class="field">
+    <%= f.label :Balance %><br />
+    <%= f.text_field :Release_date , :readonly => true%>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>
