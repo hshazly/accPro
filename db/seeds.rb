@@ -7,8 +7,8 @@ TYPE  = ["Asset","Asset","Asset","Asset","Liability","Liability","Expense","Expe
 10.times do |i|
   name = NAME[i]
   balance = BALANCE[i]
-  type = TYPE[i]
-  puts "#{name}, #{balance}, #{type}"
-  Account.create(:name => name,:balance => balance, :type => type)
+  account_type = TYPE[i]
+  puts "#{name}, #{balance}, #{account_type}"
+  Account.create(:name => name,:balance => balance, :account_type => account_type)
 end
 

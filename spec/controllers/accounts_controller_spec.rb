@@ -24,11 +24,11 @@ RSpec.describe AccountsController, :type => :controller do
   # Account. As you add validations to Account, be sure to
   # adjust the attributes here as well.
   let(:valid_attributes) {
-     {name: "Cash", balance: 5000, type: "Asset"}
+     {name: "Cash", balance: 5000, account_type: "Asset"}
   }
 
   let(:invalid_attributes) {
-    {name: 90,balance: "Car",type: 12}
+    {name: 90,balance: "Car",account_type: 12}
   }
 
   # This should return the minimal set of values that should be in the session

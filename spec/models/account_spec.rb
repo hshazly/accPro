@@ -6,7 +6,7 @@ RSpec.describe Account, :type => :model do
 
   it { expect respond_to(:name) }
   it { expect respond_to(:balance) }
-  it { expect respond_to(:type) }
+  it { expect respond_to(:account_type) }
   
   it { expect be_valid }
 
@@ -19,42 +19,42 @@ RSpec.describe Account, :type => :model do
         e1= Account.first
         expect(e1.name).to eq("Cash")
         expect(e1.balance).to eq(1000)
-        expect(e1.type).to eq("Asset")
+        expect(e1.account_type).to eq("Asset")
     end
   end
 
-  describe "filter_by_type" do
+  describe "filter_by_account_type" do
      it "should filter by Asset" do
-        results=Account.filter_by_type(["Asset"])
+        results=Account.filter_by_account_type(["Asset"])
         expect(results.count).to eq(4)
         expect(results.first.balance).to eq(1000)
      end
 
      it "should return empty array if no matches" do
-        results=Account.filter_by_type("")
+        results=Account.filter_by_account_type("")
         expect(results.count).to eq(0)
      end
 
      it "should return all matches" do
-        results=Account.filter_by_type(["Asset","Liability"])
+        results=Account.filter_by_account_type(["Asset","Liability"])
         expect(results.count).to eq(6)
      end
   end
 
-  describe "get_type_balance" do
+  describe "get_account_type_balance" do
      it "should get Asset balance" do
-        results=Account.get_type_balance(["Asset"])
+        results=Account.get_account_type_balance(["Asset"])
         expect(results).to eq(17000)
      end
 
-     it "should work for more than one type" do
-        results=Account.get_type_balance(["Asset","Expense"])
+     it "should work for more than one account_type" do
+        results=Account.get_account_type_balance(["Asset","Expense"])
         expect(results).to eq(25000)
      end
 
-     it "should call filter_by_type" do
-        Account.expect_receive(:filter_by_type).with('Asset')
-        Account.get_type_balance(["Asset"])
+     it "should call filter_by_account_type" do
+        Account.expect_receive(:filter_by_account_type).with('Asset')
+        Account.get_account_type_balance(["Asset"])
      end
   end
 

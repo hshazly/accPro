@@ -53,7 +53,7 @@ RSpec.describe Account, :type => :model do
      end
 
      it "should call filter_by_type" do
-        Account.should_receive(:filter_by_type).with('Asset')
+        Account.expect_receive(:filter_by_type).with('Asset')
         Account.get_type_balance(["Asset"])
      end
   end
