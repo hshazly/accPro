@@ -51,11 +51,6 @@ RSpec.describe Account, :type => :model do
         results=Account.get_account_type_balance(["Asset","Expense"])
         expect(results).to eq(25000)
      end
-
-     it "should call filter_by_account_type" do
-        Account.expect_receive(:filter_by_account_type).with('Asset')
-        Account.get_account_type_balance(["Asset"])
-     end
   end
 
 end
