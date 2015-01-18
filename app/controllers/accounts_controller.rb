@@ -1,8 +1,9 @@
 class AccountsController < ApplicationController
 
-	def home 
-		redirect_to '/accounts/show_balance'
+	def home_page 
+		
 	end
+	
 	def show_balance
 		@accounts = Account.all
 	end
@@ -28,6 +29,6 @@ class AccountsController < ApplicationController
 	def update 
 		@account = Account.find(params[:id])
 		@account.update_attributes(params[:account])
-		redirect_to '/accounts/show_balance'
+		redirect_to @account
 	end
 end

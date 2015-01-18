@@ -6,11 +6,11 @@ AccProApp::Application.routes.draw do
 	match '/accounts/edit/:id' => 'accounts#edit'
 	match 'accounts/new' => 'accounts#new'
 	post '/accounts' => 'accounts#create'
-	get '/accounts' => 'accounts#show_balance'
+	get '/accounts' => 'accounts#home_page'
 	put 'account/:id' => 'accounts#update'
-	resources :account
+	resources :accounts
 
-	root :to => 'accounts#home'
+	root :to => 'accounts#home_page'
   # Sample of regular route:
   #   match 'products/:id' => 'catalog#view'
   # Keep in mind you can assign values other than :controller and :action

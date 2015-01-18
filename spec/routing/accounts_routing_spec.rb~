@@ -1,4 +1,5 @@
 require "rails_helper"
+require 'simplecov'
 
 RSpec.describe AccountsController, :type => :routing do
   describe "routing" do
@@ -12,7 +13,7 @@ RSpec.describe AccountsController, :type => :routing do
     end
 
     it "routes to #make_transaction" do
-      expect(:get => "/accounts/make_transaction").to route_to("accounts#make_transaction")
+      expect(:post => "/accounts/make_transaction").to route_to("accounts#make_transaction")
     end
 
     it "routes to #new" do

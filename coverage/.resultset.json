@@ -1,0 +1,76 @@
+{
+  "RSpec": {
+    "coverage": {
+      "/home/saasbook/Desktop/accPro/app/controllers/application_controller.rb": [
+        1,
+        1,
+        null
+      ],
+      "/home/saasbook/Desktop/accPro/app/helpers/application_helper.rb": [
+        1,
+        null
+      ],
+      "/home/saasbook/Desktop/accPro/app/helpers/accounts_helper.rb": [
+        1,
+        null
+      ],
+      "/home/saasbook/Desktop/accPro/app/controllers/accounts_controller.rb": [
+        1,
+        null,
+        1,
+        null,
+        null,
+        null,
+        1,
+        0,
+        null,
+        null,
+        1,
+        0,
+        null,
+        null,
+        1,
+        0,
+        null,
+        null,
+        1,
+        0,
+        0,
+        0,
+        null,
+        null,
+        1,
+        0,
+        null,
+        null,
+        1,
+        0,
+        0,
+        0,
+        null,
+        null
+      ],
+      "/home/saasbook/Desktop/accPro/app/models/account.rb": [
+        1,
+        1,
+        null,
+        1,
+        0,
+        null,
+        null,
+        1,
+        0,
+        0,
+        0,
+        0,
+        0,
+        null,
+        null,
+        0,
+        null,
+        null
+      ]
+    },
+    "timestamp": 1421597304
+  }
+}
