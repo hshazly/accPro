@@ -20,6 +20,10 @@ module NavigationHelpers
 			
 		when /^"new_account"$/
 			'/accounts/new'
+		when /^the create account page$/
+			'/accounts/new'
+		when /^show account page$/
+			'/accounts/show/1'		
     # Add more mappings here.
     # Here is an example that pulls values out of the Regexp:
     #

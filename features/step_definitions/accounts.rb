@@ -16,21 +16,12 @@ end
 
 
 Then(/^I should see all the accounts$/) do
-    if page.respond_to? :should	
-	    page.should have_content(Account.all)
-	else
-	    assert page.has_content?(Account.all.split)
-   	end
+	accounts = Account.all
+	accounts.each do |account|
+		assert page.has_content?(account)
+	end	
 end
 
-Then(/^I should see all the balances$/) do
-  if page.respond_to? :should
-    page.should have_content(Balance.all)
-  else
-    assert page.has_content?(Balance.all)
-  end
-
-end
 
 
 

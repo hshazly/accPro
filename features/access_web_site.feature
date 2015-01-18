@@ -32,6 +32,5 @@ Scenario: navigate to manage transactions
 Scenario: show the balance
 	Given I am on the balances page
 	Then I should see all the accounts
-	And I should see all the balances
 	
 

@@ -2,12 +2,12 @@
 
 <%= form_for(@account) do |f| %>
   <div class="field">
-    <%= f.label :name %><br />
+    <%= f.label :name %>
     <%= f.text_field :name %>
   </div>
   <div class="field">
-    <%= f.label :Type %><br />
-    <%= f.select :account_type , options_for_select(%w[Assets Liability Expense Equity]) %>
+    <%= f.label :Type %>
+    <%= f.select "account_type", options_for_select(%w[Assets Liability Expense Equity]) %>
   </div>
   <div class="actions">
     <%= f.submit %>

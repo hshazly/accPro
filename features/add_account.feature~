@@ -8,8 +8,7 @@ Feature: adding new account
 Scenario: add new account
 	Given I am on the create account page
 	When I fill in "account_name" with "Bank"
-	And I fill in "account_type" with "assests"
+	And I select "Assests" from "account_account_type"
 	And I press "submit"
-	Then the account should be added
 	And I should go to show account page  
 

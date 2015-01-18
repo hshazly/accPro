@@ -24,7 +24,7 @@ Scenario: navigate to add account page
 	Then I should go to "new_account"	
 
 Scenario: navigate to manage transactions 
-	Given PENDING "Second sprint"	
+	Given PENDING	
 	Given I am on the home page
 	When I follow "Make Transaction"
 	Then I should go to "Make Transaction"
