@@ -1,5 +1,6 @@
 class Account < ActiveRecord::Base
   attr_accessible :balance, :name, :account_type
+  validates_presence_of :name
   
   def self.filter_by_account_type(type)
   	return self.find_all_by_account_type(type)

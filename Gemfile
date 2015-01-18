@@ -10,7 +10,6 @@ gem 'rails', '3.2.18'
 gem 'devise'
 gem 'cancan'
 gem 'seed_dump'
-
 gem "less-rails"
 
 # for Heroku deployment - as described in Ap. A of ELLS book

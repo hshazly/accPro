@@ -3,5 +3,6 @@
 <%=  link_to 'Show Balance Sheet' , accounts_show_balance_path %>
 <br/>
 <%=  link_to 'Add New Account' , accounts_new_path %>
+<br/>
 Make Transaction
 

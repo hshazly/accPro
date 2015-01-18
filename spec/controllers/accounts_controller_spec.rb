@@ -28,7 +28,7 @@ RSpec.describe AccountsController, :type => :controller do
   }
 
   let(:invalid_attributes) {
-    {name: 90,balance: "Car",account_type: 12}
+    {balance: 9000,account_type: "Asset"}
   }
 
   # This should return the minimal set of values that should be in the session

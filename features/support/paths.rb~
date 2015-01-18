@@ -18,8 +18,7 @@ module NavigationHelpers
 		when /^the balances page$/
 			'/accounts/show_balance'
 			
-		when /^"new_account"$/
-			'/accounts/new'
+		when /^new_account$
     # Add more mappings here.
     # Here is an example that pulls values out of the Regexp:
     #

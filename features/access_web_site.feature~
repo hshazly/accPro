@@ -14,19 +14,20 @@ Scenario: visit home page
 
 Scenario: navigate to show balance page
 	Given I am on the home page
-	And I click "show_balance"
+	And I follow "Show Balance Sheet"
 	Then I should go to the balances page
 	
 
 Scenario: navigate to add account page
 	Given I am on the home page
-	And I click "add_count"
+	And I follow "Add New Account"
 	Then I should go to "new_account"	
 
-Scenario: navigate to manage transactions
+Scenario: navigate to manage transactions 
+	Given PENDING "Second sprint"	
 	Given I am on the home page
-	When I click "manage_transactions"
-	Then I should go to "edit_transactions"
+	When I follow "Make Transaction"
+	Then I should go to "Make Transaction"
 	
 Scenario: show the balance
 	Given I am on the balances page
