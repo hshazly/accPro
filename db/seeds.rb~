@@ -9,6 +9,11 @@ TYPE  = ["Asset","Asset","Asset","Asset","Liability","Liability","Expense","Expe
   balance = BALANCE[i]
   account_type = TYPE[i]
   puts "#{name}, #{balance}, #{account_type}"
-  Account.create(:name => name,:balance => balance, :account_type => type)
+  Account.create(:name => name,:balance => balance, :account_type => account_type)
 end
 
+
+
+Transaction.create(account1_id: 1,account2_id: 9,dir1:"to",dir2:"to",amount:50000, description: "first seed")
+Transaction.create(account1_id: 2,account2_id: 10,dir1:"to",dir2:"to",amount:30000, description: "second seed")
+Transaction.create(account1_id: 3,account2_id: 4,dir1:"from",dir2:"to",amount:50000, description: "third seed")

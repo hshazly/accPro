@@ -11,7 +11,7 @@
   </div>
   <div class="field">
     <%= f.label :Balance %><br />
-    <%= f.text_field :Release_date , :readonly => true%>
+    <%= f.text_field :balance , :readonly => true%>
   </div>
   <div class="actions">
     <%= f.submit %>
