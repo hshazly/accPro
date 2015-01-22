@@ -18,7 +18,7 @@ end
 Then(/^I should see all the accounts$/) do
 	accounts = Account.all
 	accounts.each do |account|
-		assert page.has_content?(Account.all.split)
+		assert page.has_content?(account), "xx"
 	end	
 end
 

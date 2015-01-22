@@ -1,20 +1,20 @@
 {
   "RSpec": {
     "coverage": {
-      "/home/saasbook/Desktop/accPro/app/controllers/application_controller.rb": [
+      "/home/saasbook/saas_final_pro/accPro/app/controllers/application_controller.rb": [
         1,
         1,
         null
       ],
-      "/home/saasbook/Desktop/accPro/app/helpers/application_helper.rb": [
+      "/home/saasbook/saas_final_pro/accPro/app/helpers/application_helper.rb": [
         1,
         null
       ],
-      "/home/saasbook/Desktop/accPro/app/helpers/accounts_helper.rb": [
+      "/home/saasbook/saas_final_pro/accPro/app/helpers/accounts_helper.rb": [
         1,
         null
       ],
-      "/home/saasbook/Desktop/accPro/app/controllers/accounts_controller.rb": [
+      "/home/saasbook/saas_final_pro/accPro/app/controllers/accounts_controller.rb": [
         1,
         null,
         1,
@@ -50,7 +50,7 @@
         null,
         null
       ],
-      "/home/saasbook/Desktop/accPro/app/models/account.rb": [
+      "/home/saasbook/saas_final_pro/accPro/app/models/account.rb": [
         1,
         1,
         1,
@@ -72,24 +72,24 @@
         null
       ]
     },
-    "timestamp": 1421599951
+    "timestamp": 1421930685
   },
   "Cucumber Features": {
     "coverage": {
-      "/home/saasbook/workspace/acc_pro_app/app/controllers/application_controller.rb": [
+      "/home/saasbook/saas_final_pro/accPro/app/controllers/application_controller.rb": [
         1,
         1,
         null
       ],
-      "/home/saasbook/workspace/acc_pro_app/app/helpers/application_helper.rb": [
+      "/home/saasbook/saas_final_pro/accPro/app/helpers/application_helper.rb": [
         1,
         null
       ],
-      "/home/saasbook/workspace/acc_pro_app/app/helpers/accounts_helper.rb": [
+      "/home/saasbook/saas_final_pro/accPro/app/helpers/accounts_helper.rb": [
         1,
         null
       ],
-      "/home/saasbook/workspace/acc_pro_app/app/controllers/accounts_controller.rb": [
+      "/home/saasbook/saas_final_pro/accPro/app/controllers/accounts_controller.rb": [
         1,
         null,
         1,
@@ -125,7 +125,7 @@
         null,
         null
       ],
-      "/home/saasbook/workspace/acc_pro_app/app/models/account.rb": [
+      "/home/saasbook/saas_final_pro/accPro/app/models/account.rb": [
         1,
         1,
         1,
@@ -147,6 +147,6 @@
         null
       ]
     },
-    "timestamp": 1421604540
+    "timestamp": 1421930703
   }
 }
