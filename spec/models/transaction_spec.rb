@@ -56,7 +56,7 @@ RSpec.describe Transaction, :type => :model do
         transaction.should_receive(:validate_transaction)
         transaction.make_transaction
      end
-     it "should edit the balances in the right way"
+     it "should edit the balances in the right way" do
         account1 = Account.create(name: "Capital",account_type: "Equity",balance:0)
         account2 = Account.create(name: "Bank",account_type: "Asset",balance:0)
         expect { Transaction.create(account1_id: account1.id,account2_id: account2.id,dir1:"to",dir2:"to",amount:50000, description: "adding transaction") }.to change {account1.balance}.from(0).to(50000)
