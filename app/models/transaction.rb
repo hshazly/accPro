@@ -1,5 +1,30 @@
 class Transaction < ActiveRecord::Base
+	before_save :make_transaction
+  validates :amount, :dir1, :dir2, :account1_id, :account2_id, :presence => true
+  
   attr_accessible :amount, :description, :dir1, :dir2, :account1_id, :account2_id
   belongs_to :account1, :class_name => Account , :foreign_key => 'account1_id'
   belongs_to :account2, :class_name => Account , :foreign_key => 'account2_id'
+  
+  def make_transaction
+  	if validate_transaction
+  		account1.balance = account1.balance - amount if dir1.downcase == "from"
+  		account1.balance = account1.balance + amount if dir1.downcase == "to"
+  		account2.balance = account2.balance - amount if dir2.downcase == "from"
+  		account2.balance = account2.balance + amount if dir2.downcase == "to"
+  	end
+  end
+  
+  def validate_transaction
+  	sign1 = 1 
+  	sign2 = 1 
+  	sign1 = -1 if account1.account_type.downcase == "equity" || account1.account_type.downcase == "liabilty"
+  	sign2 = -1 if account2.account_type.downcase == "equity" || account2.account_type.downcase == "liabilty"
+  	sign1 = (sign1 * -1) if dir1.downcase == "from"
+  	sign2 = (sign2 * -1) if dir2.downcase == "from"
+  	
+  	return true if (sign1 + sign2 == 0)
+  	return false
+  end
+  
 end
