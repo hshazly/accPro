@@ -25,7 +25,7 @@ RSpec.describe Transaction, :type => :model do
         expect(e1.account2_id).to eq(9)
         expect(e1.dir1).to eq("to")
         expect(e1.dir2).to eq("to")
-        expect(e1.amount).to eq("50000")
+        expect(e1.amount).to eq("50000.0")
         expect(e1.description).to eq("first seed")
     end
   end
@@ -43,7 +43,7 @@ RSpec.describe Transaction, :type => :model do
      it "should return false when the transaction is invalid" do
         account1 = Account.create(name: "Capital",account_type: "Equity",balance:0)
         account2 = Account.create(name: "Bank",account_type: "Asset",balance:0)
-        invalid_transaction = Transaction.new(account1_id: account1.id,account2_id: account2.id,dir1:"from",dir2:"to",amount:50000, description: "Invalid test")
+        invalid_transaction = Transaction.new(account1_id: account1.id,account2_id: account2.id,dir1:"from",dir2:"to",amount:50000.0, description: "Invalid test")
         result = valid_transaction.validate_transaction
         expect(result).to eq(false)
      end
@@ -59,8 +59,8 @@ RSpec.describe Transaction, :type => :model do
      it "should edit the balances in the right way" do
         account1 = Account.create(name: "Capital",account_type: "Equity",balance:0)
         account2 = Account.create(name: "Bank",account_type: "Asset",balance:0)
-        expect { Transaction.create(account1_id: account1.id,account2_id: account2.id,dir1:"to",dir2:"to",amount:50000, description: "adding transaction") }.to change {account1.balance}.from(0).to(50000)
-        expect(account2.balance).to eq(50000) 
+        expect { Transaction.create(account1_id: account1.id,account2_id: account2.id,dir1:"to",dir2:"to",amount:50000.0, description: "adding transaction") }.to change {account1.balance}.from(0).to(50000.0)
+        expect(account2.balance).to eq(50000.0) 
 
      end
   end

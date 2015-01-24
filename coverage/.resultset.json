@@ -123,10 +123,12 @@
       "/home/saasbook/Desktop/acc pro/accPro/app/models/transaction.rb": [
         1,
         1,
+        1,
+        1,
         null
       ]
     },
-    "timestamp": 1422093064
+    "timestamp": 1422096551
   },
   "Cucumber Features": {
     "coverage": {
