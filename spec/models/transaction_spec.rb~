@@ -25,7 +25,7 @@ RSpec.describe Transaction, :type => :model do
         expect(e1.account2_id).to eq(9)
         expect(e1.dir1).to eq("to")
         expect(e1.dir2).to eq("to")
-        expect(e1.amount).to eq(50000.0)
+        expect(e1.amount).to eq("50000.0")
         expect(e1.description).to eq("first seed")
     end
   end
