@@ -12,10 +12,6 @@ RSpec.describe AccountsController, :type => :routing do
       expect(:get => "/accounts/show_balance").to route_to("accounts#show_balance")
     end
 
-    it "routes to #make_transaction" do
-      expect(:post => "/accounts/make_transaction").to route_to("accounts#make_transaction")
-    end
-
     it "routes to #new" do
       expect(:get => "/accounts/new").to route_to("accounts#new")
     end
