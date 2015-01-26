@@ -8,10 +8,13 @@ class Transaction < ActiveRecord::Base
   
   def make_transaction
   	if validate_transaction
-  		account1.balance = account1.balance - amount if dir1.downcase == "from"
-  		account1.balance = account1.balance + amount if dir1.downcase == "to"
-  		account2.balance = account2.balance - amount if dir2.downcase == "from"
-  		account2.balance = account2.balance + amount if dir2.downcase == "to"
+  		balance1 = account1.balance - amount if dir1.downcase == "from"
+  		balance1 = account1.balance + amount if dir1.downcase == "to"
+  		balance2 = account2.balance - amount if dir2.downcase == "from"
+  		balance2 = account2.balance + amount if dir2.downcase == "to"
+                Account.update(account1.id, balance: balance1)
+                Account.update(account2.id, balance: balance2)
+                
   	end
   end
   

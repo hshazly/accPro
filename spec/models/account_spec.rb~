@@ -1,5 +1,5 @@
 require 'rails_helper'
-require 'simplecov'
+require 'spec_helper'
 
 RSpec.describe Account, :type => :model do
 
@@ -19,7 +19,7 @@ RSpec.describe Account, :type => :model do
     it "should have the first Account element correct" do
         e1= Account.first
         expect(e1.name).to eq("Cash")
-        expect(e1.balance).to eq(1000)
+        expect(e1.balance).to eq(51000)
         expect(e1.account_type).to eq("Asset")
     end
   end
@@ -28,7 +28,7 @@ RSpec.describe Account, :type => :model do
      it "should filter by Asset" do
         results=Account.filter_by_account_type(["Asset"])
         expect(results.count).to eq(4)
-        expect(results.first.balance).to eq(1000)
+        expect(results.first.balance).to eq(51000)
      end
 
      it "should return empty array if no matches" do
@@ -45,7 +45,7 @@ RSpec.describe Account, :type => :model do
   describe "get_account_type_balance" do
      it "should get Asset balance" do
         results=Account.get_account_type_balance(["Asset"])
-        expect(results).to eq(17000)
+        expect(results).to eq(97000)
      end
 
      it "should work for more than one account_type" do

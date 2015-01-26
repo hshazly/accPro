@@ -15,6 +15,7 @@ RSpec.describe Transaction, :type => :model do
   it { expect be_valid }
 
   describe "ran the seed file" do
+    
     it "should return 3 for number of transaction records" do
  	expect(Transaction.count).to eq(3)
     end
@@ -57,11 +58,12 @@ RSpec.describe Transaction, :type => :model do
         transaction.make_transaction
      end
      it "should edit the balances in the right way" do
-        account1 = Account.create(name: "Capital",account_type: "Equity",balance:0)
-        account2 = Account.create(name: "Bank",account_type: "Asset",balance:0)
-        #expect { Transaction.create(account1_id: account1.id,account2_id: account2.id,dir1:"to",dir2:"to",amount:50000.0, description: "adding transaction") }.to change {account1.balance}.from(0).to(50000.0)
-        Transaction.create(account1_id: account1.id,account2_id: account2.id,dir1:"to",dir2:"to",amount:50000.0, description: "adding transaction")
-        expect(account2.balance).to eq(50000.0) 
+        account1 = Account.create(name: "Capital1",account_type: "Equity",balance:0)
+        account2 = Account.create(name: "Bank1",account_type: "Asset",balance:0)
+        expect { Transaction.create(account1_id: account1.id,account2_id: account2.id,dir1:"to",dir2:"to",amount: 50000.0, description: "adding transaction") }.to change {Account.find(account1.id).balance}.from(0).to(50000.0)
+        Transaction.create(account1_id: account1.id,account2_id: account2.id,dir1:"to",dir2:"to",amount: 50000.0, description: "adding transaction")
+	account2 = Account.find(account2.id)
+       expect(account2.balance).to eq(100000.0) 
 
      end
   end
