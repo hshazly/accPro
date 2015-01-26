@@ -2,7 +2,7 @@ class Transaction < ActiveRecord::Base
 	before_save :make_transaction
   validates :amount, :dir1, :dir2, :account1_id, :account2_id, :presence => true
   
-  attr_accessible :amount, :description, :dir1, :dir2, :account1_id, :account2_id
+  attr_accessible :amount, :description, :dir1, :dir2, :account1_id, :account2_id, :account1 , :account2
   belongs_to :account1, :class_name => Account , :foreign_key => 'account1_id'
   belongs_to :account2, :class_name => Account , :foreign_key => 'account2_id'
   

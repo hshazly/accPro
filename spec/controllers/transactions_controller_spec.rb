@@ -85,10 +85,6 @@ RSpec.describe TransactionsController, :type => :controller do
         expect(assigns(:transaction)).to be_a_new(Transaction)
       end
 
-      it "re-renders the 'new' template" do
-        post :create, {:transaction => invalid_attributes}, valid_session
-        expect(response).to render_template("new")
-      end
     end
   end
 end

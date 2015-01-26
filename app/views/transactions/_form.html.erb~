@@ -27,7 +27,7 @@
   </div>
   <div class="field">
     <%= f.label :dir2 %><br />
-    <%= f.select "dir2", options_for_select(%w[to from]) %>
+    <%= f.select "dir2", options_for_selectv %>
   </div>
   <div class="field">
     <%= f.label :amount %><br />

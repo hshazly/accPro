@@ -25,7 +25,7 @@ RSpec.describe TransactionsController, :type => :controller do
   # Transaction. As you add validations to Transaction, be sure to
   # adjust the attributes here as well.
   let(:valid_attributes) {
-    {account1_id: 1,account2_id: 9,dir1:"to",dir2:"to",amount:50000, description: "valid attributes"}
+    {account1: "bank",account2: "capital",dir1:"to",dir2:"to",amount:50000, description: "valid attributes"}
   }
 
   let(:invalid_attributes) {
@@ -69,7 +69,6 @@ RSpec.describe TransactionsController, :type => :controller do
 
       it "assigns a newly created transaction as @transaction" do
         post :create, {:transaction => valid_attributes}, valid_session
-        puts "#{:transaction}"
         expect(assigns(:transaction)).to be_a(Transaction)
         expect(assigns(:transaction)).to be_persisted
       end
@@ -86,10 +85,6 @@ RSpec.describe TransactionsController, :type => :controller do
         expect(assigns(:transaction)).to be_a_new(Transaction)
       end
 
-      it "re-renders the 'new' template" do
-        post :create, {:transaction => invalid_attributes}, valid_session
-        expect(response).to render_template("new")
-      end
     end
   end
 end
