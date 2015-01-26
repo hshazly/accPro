@@ -1,24 +1,24 @@
 {
   "RSpec": {
     "coverage": {
-      "/home/saasbook/Desktop/acc pro/accPro/app/controllers/application_controller.rb": [
+      "/home/saasbook/saas_final_pro/accPro/app/controllers/application_controller.rb": [
         1,
         1,
         null
       ],
-      "/home/saasbook/Desktop/acc pro/accPro/app/helpers/application_helper.rb": [
+      "/home/saasbook/saas_final_pro/accPro/app/helpers/application_helper.rb": [
         1,
         null
       ],
-      "/home/saasbook/Desktop/acc pro/accPro/app/helpers/accounts_helper.rb": [
+      "/home/saasbook/saas_final_pro/accPro/app/helpers/accounts_helper.rb": [
         1,
         null
       ],
-      "/home/saasbook/Desktop/acc pro/accPro/app/helpers/transactions_helper.rb": [
+      "/home/saasbook/saas_final_pro/accPro/app/helpers/transactions_helper.rb": [
         1,
         null
       ],
-      "/home/saasbook/Desktop/acc pro/accPro/app/controllers/accounts_controller.rb": [
+      "/home/saasbook/saas_final_pro/accPro/app/controllers/accounts_controller.rb": [
         1,
         null,
         1,
@@ -54,7 +54,7 @@
         null,
         null
       ],
-      "/home/saasbook/Desktop/acc pro/accPro/app/models/account.rb": [
+      "/home/saasbook/saas_final_pro/accPro/app/models/account.rb": [
         1,
         1,
         1,
@@ -75,7 +75,7 @@
         null,
         null
       ],
-      "/home/saasbook/Desktop/acc pro/accPro/app/controllers/transactions_controller.rb": [
+      "/home/saasbook/saas_final_pro/accPro/app/controllers/transactions_controller.rb": [
         1,
         1,
         null,
@@ -98,17 +98,17 @@
         1,
         null,
         null,
-        1,
-        null,
         null,
         1,
         4,
         4,
         4,
         4,
-        0,
-        null,
         4,
+        null,
+        3,
+        null,
+        1,
         null,
         null,
         null,
@@ -118,7 +118,7 @@
         null,
         null
       ],
-      "/home/saasbook/Desktop/acc pro/accPro/app/models/transaction.rb": [
+      "/home/saasbook/saas_final_pro/accPro/app/models/transaction.rb": [
         1,
         1,
         1,
@@ -128,33 +128,33 @@
         1,
         null,
         1,
-        7,
-        6,
-        6,
-        6,
-        6,
-        6,
-        6,
+        10,
+        9,
+        9,
+        9,
+        9,
+        9,
+        9,
         null,
         1,
         null,
         null,
         null,
         1,
-        8,
-        8,
-        8,
-        8,
-        8,
-        8,
-        8,
+        11,
+        11,
+        11,
+        11,
+        11,
+        11,
+        11,
         1,
         null,
         null,
         null
       ]
     },
-    "timestamp": 1422293184
+    "timestamp": 1422296563
   },
   "Cucumber Features": {
     "coverage": {

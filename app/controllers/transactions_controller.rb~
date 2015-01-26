@@ -20,14 +20,15 @@ class TransactionsController < ApplicationController
     respond_with(@transaction)
   end
 
-  def edit
-  end
 
   def create
-  	params[:transaction][:account1] = Account.find_by_name(params[:transaction][:account1]) 
+  	params[:transaction][:account1] = Account.find_by_name(params[:transaction][:account1])
+  	params[:transaction][:account2] = Account.find_by_name(params[:transaction][:account2]) 
+        puts params[:transaction]
     @transaction = Transaction.new(params[:transaction])
     if @transaction.save
-    	respond_with(@transaction)
+    	#respond_with(@transaction)
+        redirect_to transaction_path(@transaction)
     else 
     	redirect_to new_transaction_path
     end
