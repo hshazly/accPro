@@ -1,11 +1,10 @@
 class TransactionsController < ApplicationController
-  before_filter :set_transaction, only: [:show, :edit, :update, :destroy]
+  before_filter :set_transaction, only: [:show]
 
   respond_to :html
 
   def index
     @transactions = Transaction.all
-    respond_with(@transactions)
   end
 
   def show
@@ -22,13 +21,10 @@ class TransactionsController < ApplicationController
 
   def create
     @transaction = Transaction.new(params[:transaction])
-    @transaction.save
-    respond_with(@transaction)
-  end
-
-  def update
-    @transaction.update_attributes(params[:transaction])
-    respond_with(@transaction)
+    if @transaction.save
+    	respond_with(@transaction)
+    else 
+    	redirect_to new_transaction_path
   end
 
   private

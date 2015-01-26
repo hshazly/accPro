@@ -1,4 +1,7 @@
 AccProApp::Application.routes.draw do
+  resources :transactions, :only {:}
+
+
   # The priority is based upon order of creation:
   # first created -> highest priority.
 	match 'accounts/show_balance' => 'accounts#show_balance'
@@ -6,7 +9,7 @@ AccProApp::Application.routes.draw do
 	match '/accounts/edit/:id' => 'accounts#edit'
 	match 'accounts/new' => 'accounts#new'
 	post '/accounts' => 'accounts#create'
-	get '/accounts' => 'accounts#show_balance'
+	get '/accounts' => 'accounts#home_page'
 	put 'account/:id' => 'accounts#update'
 	resources :accounts
 

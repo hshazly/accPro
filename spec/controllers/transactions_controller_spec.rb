@@ -39,9 +39,8 @@ RSpec.describe TransactionsController, :type => :controller do
 
   describe "GET index" do
     it "assigns all transactions as @transactions" do
-      transaction = Transaction.create! valid_attributes
       get :index, {}, valid_session
-      expect(assigns(:transactions)).to eq([transaction])
+      expect(assigns(:transactions)).to eq(Transaction.all)
     end
   end
 

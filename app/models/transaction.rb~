@@ -12,10 +12,10 @@ class Transaction < ActiveRecord::Base
   		balance1 = account1.balance + amount if dir1.downcase == "to"
   		balance2 = account2.balance - amount if dir2.downcase == "from"
   		balance2 = account2.balance + amount if dir2.downcase == "to"
-           	puts account1.id
-                Account.update(account1.id, balance: balance1)
-                Account.update(account2.id, balance: balance2)
-                
+      Account.update(account1.id, balance: balance1)
+      Account.update(account2.id, balance: balance2)
+    
+  	#else return false            
   	end
   end
   
@@ -26,7 +26,6 @@ class Transaction < ActiveRecord::Base
   	sign2 = -1 if account2.account_type.downcase == "equity" || account2.account_type.downcase == "liabilty"
   	sign1 = (sign1 * -1) if dir1.downcase == "from"
   	sign2 = (sign2 * -1) if dir2.downcase == "from"
-  	
   	return true if (sign1 + sign2 == 0)
   	return false
   end

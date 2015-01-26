@@ -1,5 +1,5 @@
 AccProApp::Application.routes.draw do
-  resources :transactions
+  resources :transactions, :only => [:show,:index,:new,:create]
 
 
   # The priority is based upon order of creation:
