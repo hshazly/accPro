@@ -32,6 +32,9 @@ Scenario: navigate to manage transactions
 Scenario: show the balance
 	Given I am on the balances page
 	Then I should see all the accounts
-	And I should see all the balances
 	
 
+Scenario: show transactions history
+	Give I am on the home page
+	when I follow "Show Transactions history"
+	Then I should go to "Show Transactions history"

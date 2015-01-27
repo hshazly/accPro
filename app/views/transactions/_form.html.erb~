@@ -13,29 +13,29 @@
 
 	<div class="field">
     <%= f.label :account1 %>
-    <%= f.select "account1", options_for_select(@all_accounts) %>
+    <%= f.select "account1", options_for_select(@all_accounts), :id => "transaction_account1" %>
   </div>
   
   <div class="field">
     <%= f.label :account2 %>
-    <%= f.select "account2", options_for_select(@all_accounts) %>
+    <%= f.select "account2", options_for_select(@all_accounts), :id => "transaction_account2" %>
   </div>
   
   <div class="field">
     <%= f.label :dir1 %><br />
-    <%= f.select "dir1", options_for_select(%w[to from]) %>
+    <%= f.select "dir1", options_for_select(%w[to from]), :id => "dir1" %>
   </div>
   <div class="field">
     <%= f.label :dir2 %><br />
-    <%= f.select "dir2", options_for_selectv %>
+    <%= f.select "dir2", options_for_select(%w[to from]), :id => "dir2" %>
   </div>
   <div class="field">
     <%= f.label :amount %><br />
-    <%= f.text_field :amount %>
+    <%= f.text_field :amount, :id => "amount" %>
   </div>
   <div class="field">
     <%= f.label :description %><br />
-    <%= f.text_area :description %>
+    <%= f.text_area :description, :id => "description" %>
   </div>
   <div class="actions">
     <%= f.submit %>

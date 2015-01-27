@@ -23,8 +23,7 @@ Scenario: navigate to add account page
 	And I follow "Add New Account"
 	Then I should go to "new_account"	
 
-Scenario: navigate to manage transactions 
-	Given PENDING	
+Scenario: navigate to manage transactions 	
 	Given I am on the home page
 	When I follow "Make Transaction"
 	Then I should go to "Make Transaction"
@@ -34,3 +33,7 @@ Scenario: show the balance
 	Then I should see all the accounts
 	
 
+Scenario: show transactions history
+	Give I am on the home page
+	when I follow "Show Transactions history"
+	Then I should go to "Show Transactions history"

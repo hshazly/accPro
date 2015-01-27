@@ -15,15 +15,22 @@ module NavigationHelpers
 
     when /^the home\s?page$/
       '/'
-		when /^the balances page$/
-			'/accounts/show_balance'
-			
-		when /^"new_account"$/
-			'/accounts/new'
-		when /^the create account page$/
-			'/accounts/new'
-		when /^show account page$/
-			'/accounts/show/1'		
+	when /^the balances page$/
+		'/accounts/show_balance'
+	when /^"new_account"$/
+		'/accounts/new'
+	when /^the create account page$/
+		'/accounts/new'
+	when /^show account page$/
+		'/accounts/show/1'
+	when /^"Make Transaction"$/
+		'/transactions/new'
+	when /^"Show Transactions history"$/
+		'/transactions'
+	when /^new transactions page$/
+		'/transactions/new'
+	when /^show transactions page$/
+		'/transactions'	
     # Add more mappings here.
     # Here is an example that pulls values out of the Regexp:
     #

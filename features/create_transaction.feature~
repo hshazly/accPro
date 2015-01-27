@@ -1,0 +1,39 @@
+Feature: creating transaction
+  As an accountant
+  So that I can transfer money from account to another
+  I want to be able to make transactions between accounts
+  
+Background: movies have been added to database
+  
+  Given the following accounts exist:
+  | name            | balance | account_type | 
+  | assets_account1 | 1000    | Asset        |
+  | assets_account2 | 1000    | Asset        |
+  | equity_account  | 1000    | Equity       |
+
+  And I am on new transactions page
+
+
+Scenario: create valid transaction
+	When I select "assets_account1" from "transaction_account1"
+	And I select "equity_account" from "transaction_account2"
+	And I select "to" from "transaction_dir1"
+	And I select "to" from "transaction_dir2"
+	And I fill in "amount" with "500"
+	And I fill in "description" with "transaction_test"
+	And I press "submit"
+	Then I should go to show transactions page
+	And I should see "transaction_test"
+	And I should see "500.0"  
+
+
+Scenario: create invalid transaction
+	When I select "assets_account1" from "transaction_account1"
+	And I select "assets_account2" from "transaction_account2"
+	And I select "to" from "transaction_dir1"
+	And I select "to" from "transaction_dir2"
+	And I fill in "amount" with "500"
+	And I fill in "description" with "transaction_test"
+	And I press "submit"
+	Then I should go to new transactions page
+

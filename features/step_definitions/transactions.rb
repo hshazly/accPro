@@ -1,6 +1,6 @@
 Given(/^the following transactions exist:$/) do |table|
 	table.hashes.each do |transaction|
-    	Account.create(transaction)
+    	Transaction.create(transaction)
 	end
 end
 
