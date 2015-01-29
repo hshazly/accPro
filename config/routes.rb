@@ -1,4 +1,6 @@
 AccProApp::Application.routes.draw do
+  devise_for :users
+
   resources :transactions, :only => [:show,:index,:new,:create]
 
 
