@@ -1,0 +1,43 @@
+<%= stylesheet_link_tag 'signin'%>
+
+<div class="container">
+	<form class="form-signin">
+		<h2 class="form-signin-heading" style="padding-top: 70px">Sign Up</h2>
+	</form>
+	<%= form_for(resource, as: resource_name, url: registration_path(resource_name), html: {class: "form-signin", style: "padding: 0px"}) do |f| %>
+		<div style="color: red">
+  		<%= devise_error_messages! %>
+		</div>
+  		<div class="field">
+    		<%= f.label :email, :class => "sr-only" %><br />
+    		<%= f.email_field :email, :class => "form-control", :placeholder => "Email address", autofocus: true %>
+  		</div>
+
+  		<div class="field" style="padding-top: 20px">
+    		<%= f.label :password, :class => "sr-only" %>
+    		<% if @validatable %>
+    			<em>(Password must be <%= @minimum_password_length %> characters minimum)</em>
+    		<% end %><br />
+    		<%= f.password_field :password, :class => "form-control", :placeholder => "Password", autocomplete: "off" %>
+  		</div>
+
+  		<div class="field">
+    		<%= f.label :password_confirmation, :class => "sr-only" %><br />
+    		<%= f.password_field :password_confirmation, :class => "form-control", :placeholder => "Password Confirmation", autocomplete: "off" %>
+  		</div>
+
+  		<div class="actions">
+    		<%= f.submit "Sign up", :class => "btn btn-lg btn-primary btn-block" %>
+  		</div>
+<% end %>
+
+</div>
+
+	<div class="container marketing">
+      <hr class="featurette-divider" style="padding: 0px">
+      <footer>
+        <p class="pull-right"><a href="#">Back to top</a></p>
+        <p>&copy; 2014 Company, Inc. &middot; <a href="#">Privacy</a> &middot; <a href="#">Terms</a></p>
+      </footer>
+	</div>
+

@@ -1,4 +1,19 @@
-<h1>New transaction</h1>
+<%= stylesheet_link_tag 'dashboard'%>
+
+
+<div class="container-fluid">
+	<div class="row">
+        <div class="col-sm-3 col-md-2 sidebar">
+          <ul class="nav nav-sidebar">
+            <li class="active"><%= link_to "Overview", accounts_dashboard_path %></a></li>
+            <li><%= link_to 'Profile', edit_user_registration_path, :class => 'navbar-link' %> </li>
+            <li><%= link_to "Accounts", crud_accounts_path %></li>
+            <li><%= link_to "Transactions", transactions_path %></li>
+          </ul>
+</div>
+
+<div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main" style="margin-top: 60px">
+	<h1 class="page-header" style="color: black">New Transaction</h1>
 
 <%= render 'form' %>
 

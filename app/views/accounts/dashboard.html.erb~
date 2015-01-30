@@ -1,0 +1,47 @@
+<%= stylesheet_link_tag 'dashboard'%>
+
+<div class="container-fluid">
+	<div class="row">
+        <div class="col-sm-3 col-md-2 sidebar">
+          <ul class="nav nav-sidebar">
+            <li class="active"><a href="#">Overview <span class="sr-only">(current)</span></a></li>
+            <li><%= link_to 'Profile', edit_user_registration_path, :class => 'navbar-link' %> </li>
+            <li><%= link_to "Accounts", crud_accounts_path %></li>
+            <li>
+            	<li class="dropdown">
+                  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Transactions<span class="caret"></span></a>
+                  <ul class="dropdown-menu" role="menu">
+                    <li><a href="#">New</a></li>
+                    <li><a href="#">Update</a></li>
+                    <li><a href="#">Delete</a></li>
+				  </ul>
+				</li>	  		
+
+            </li>
+          </ul>
+	</div>
+
+	<div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main" style="margin-top: 60px">
+	<h1 class="page-header" style="color: black">Dashboard</h1>
+          <div class="row placeholders">
+            <div class="col-xs-6 col-sm-3 placeholder">
+              <%= image_tag 'thumb1.jpg', :alt => "Generic placeholder thumbnail", data: {src: "holder.js/200x200"}, :style => "max-width: 150px" %>
+              <h4><%=  link_to 'Add New Account' , accounts_new_path %></h4>
+            </div>
+            <div class="col-xs-6 col-sm-3 placeholder">
+              <%= image_tag 'calculator.jpe', :alt => "Generic placeholder thumbnail", data: {src: "holder.js/200x200"}, :style => "max-width: 150px" %>
+              <h4><%=  link_to 'Make Transaction' , new_transaction_path %></h4>
+            </div>
+            <div class="col-xs-6 col-sm-3 placeholder">
+		<%= image_tag 'thumb3.jpg', :alt => "Generic placeholder thumbnail", data: {src: "holder.js/200x200"}, :style => "max-width: 150px" %>
+              <h4><%=  link_to 'Show Balance Sheet' , accounts_show_balance_path , :id => 'show_balance' %></h4>
+            </div>
+            <div class="col-xs-6 col-sm-3 placeholder">
+		<%= image_tag 'thumb2.jpg', :alt => "Generic placeholder thumbnail", data: {src: "holder.js/200x200"}, :style => "max-width: 150px" %>
+              <h4><%=  link_to 'Transactions History' , transactions_path %></h4>
+            </div>
+          </div>	
+	</div>
+</div>
+
+

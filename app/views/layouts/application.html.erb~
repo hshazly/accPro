@@ -1,25 +1,104 @@
 <!DOCTYPE html>
 <html>
-<head>
-  <title>AccProApp</title>
-  <%= stylesheet_link_tag    "application", :media => "all" %>
+	<head>
+		<meta charset="utf-8">
+    	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+    	<meta name="viewport" content="width=device-width, initial-scale=1">
+    	<meta name="description" content="">
+    	<meta name="author" content="">
+
+  		<title>AccPro</title>
+  		<!--<%= stylesheet_link_tag    "application", :media => "all" %>-->
   <%= javascript_include_tag "application" %>
   <%= csrf_meta_tags %>
-  
-</head>
-<body>
-<div align=middle >
 
-<% if notice %>
-  <p class="alert alert-success"><%= notice %></p>
-<% end %>
-<% if alert %>
-  <p class="alert alert-danger"><%= alert %></p>
-<% end %>
+    	<!--<link href="assets/bootstrap.min.css" rel="stylesheet">-->
+    	<!-- Custom styles for this template -->
+    	<!--<link href="assets/carousel.css" rel="stylesheet">-->
+    	<%= stylesheet_link_tag 'bootstrap.min'%>
+    	<%= stylesheet_link_tag 'carousel'%>
+  	</head>
+	<body class="container-fluid" style="padding: 0">
+		<!-- NAVBAR
+================================================== -->
+<% if not user_signed_in? %>
+   <div class="navbar-wrapper">
+   <div class="container" style="height: 0px;">
 
-<%= yield %>
+   <nav class="navbar navbar-inverse navbar-static-top">
+		<div class="container">
+			<div class="navbar-header">
+          		<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+              <a class="navbar-brand" style="font-weight: bold" href="#">AccPro</a>
+            </div>
+            <div id="navbar" class="navbar-collapse collapse">
+              <ul class="nav navbar-nav">
+                <li><%= link_to "Home", accounts_path, :style => "padding-left: 70px; padding-right: 70px; font-size: 17px" %></li>
+                <li><%= link_to "Sign Up", new_user_registration_path, :style => "padding-left: 70px; padding-right: 70px; font-size: 17px" %></li>
+                <li><%= link_to "Sign In", new_user_session_path, :style => "padding-left: 70px; padding-right: 70px; font-size: 17px" %></li>
+	<% end %>
+	<% if user_signed_in? %>
+    <nav class="navbar navbar-inverse navbar-fixed-top">
+      <div class="container-fluid">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" style="font-weight: bold" href="#">AccPro</a>
+        </div>
+        <div id="navbar" class="navbar-collapse collapse">
+          <ul class="nav navbar-nav navbar-right">
+            <li style="padding-right: 30px"><%= link_to "Dashboard", accounts_dashboard_path%></li>
+            <li style="padding-top: 15px">Logged in as <strong><%= current_user.email %></strong>. </li>
+            <li><%= link_to 'Edit profile', edit_user_registration_path, :class => 'navbar-link' %> </li>
+            <li style="padding-top: 15px">| </li>
+            <li><%= link_to "Logout", destroy_user_session_path, method: :delete, :class => 'navbar-link'  %></li>
+          </ul>	
+  		</div>
+  	</div>
+  </nav>		
+  <%end%>
+              </ul>
+            </div>
+          </div>
+        </nav>
 
-<br/>
-<%= link_to 'Home' , root_path%>
-</body>
+      </div>
+    </div>
+	
+	
+  		<%if notice %>
+			<% flash.each do |type, message| %>
+				<% if not message.eql? 'Signed out successfully.' %>
+  		<div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main" style="margin-top: 60px">
+  				<% end %>	
+			
+  				<div class="alert <%= bootstrap_class_for(type) %> fade in" style="z-index: 1000; position: relative; margin: 10px">
+    			<button class="close" data-dismiss="alert">×</button>
+    			<%= message %>
+  				</div>
+			<% end %>
+		</div>	
+	  	<% end %>	
+		<% if alert %>
+	  		<div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main" style="margin-top: 90px">
+	  			<p class="alert alert-danger" style="max-width: 70%"><%= alert %></p>
+	  		</div>
+		<% end %>
+
+	
+	
+		<%= yield %>
+		<!-- <%= link_to 'Home' , root_path%> -->
+	</body>
+
+ 
 </html>

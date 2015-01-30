@@ -1,21 +1,25 @@
 AccProApp::Application.routes.draw do
   devise_for :users
-
+  devise_for :users, controllers: { sessions: "users/sessions" }
   resources :transactions, :only => [:show,:index,:new,:create]
 
 
   # The priority is based upon order of creation:
   # first created -> highest priority.
-	match 'accounts/show_balance' => 'accounts#show_balance'
-	match 'accounts/show/:id' => 'accounts#show'	
-	match '/accounts/edit/:id' => 'accounts#edit'
-	match 'accounts/new' => 'accounts#new'
-	post '/accounts' => 'accounts#create'
-	get '/accounts' => 'accounts#home_page'
-	put 'account/:id' => 'accounts#update'
-	resources :accounts
+  match 'crud_accounts' => 'accounts#index'
+  match 'crud_transactions' => 'transactions#index'
+  
+  match 'accounts/show_balance' => 'accounts#show_balance'
+  match 'accounts/dashboard' => 'accounts#dashboard'
+  match 'accounts/show/:id' => 'accounts#show'	
+  match '/accounts/edit/:id' => 'accounts#edit'
+  match 'accounts/new' => 'accounts#new'
+  post '/accounts' => 'accounts#create'
+  get '/accounts' => 'accounts#home_page'
+  put 'account/:id' => 'accounts#update'
+  resources :accounts
 
-	root :to => 'accounts#home_page'
+  root :to => 'accounts#home_page'
   # Sample of regular route:
   #   match 'products/:id' => 'catalog#view'
   # Keep in mind you can assign values other than :controller and :action

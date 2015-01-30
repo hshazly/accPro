@@ -1,7 +1,7 @@
 <%= form_for(@transaction) do |f| %>
   <% if @transaction.errors.any? %>
     <div id="error_explanation">
-      <h2><%= pluralize(@transaction.errors.count, "error") %> prohibited this transaction from being saved:</h2>
+      <h1><%= pluralize(@transaction.errors.count, "error") %> prohibited this transaction from being saved:</h1>
 
       <ul>
       <% @transaction.errors.full_messages.each do |msg| %>
@@ -17,27 +17,27 @@
   </div>
   
   <div class="field">
-    <%= f.label :account2 %>
+    <%= f.label :account2, :class => "aria-label" %>
     <%= f.select "account2", options_for_select(@all_accounts), :id => "transaction_account2" %>
   </div>
   
   <div class="field">
-    <%= f.label :dir1 %><br />
+    <%= f.label :direction1 %>
     <%= f.select "dir1", options_for_select(%w[to from]), :id => "dir1" %>
   </div>
   <div class="field">
-    <%= f.label :dir2 %><br />
-    <%= f.select "dir2", options_for_select(%w[to from]), :id => "dir2" %>
+    <%= f.label :direction2 %>
+    <%= f.select "dir2", options_for_select(%w[to from]), :id => "dir2", :class => "dropdown-menu" %>
   </div>
   <div class="field">
     <%= f.label :amount %><br />
-    <%= f.text_field :amount, :id => "amount" %>
+    <%= f.text_field :amount, :id => "amount", :class => "form-control" %>
   </div>
   <div class="field">
     <%= f.label :description %><br />
-    <%= f.text_area :description, :id => "description" %>
+    <%= f.text_area :description, :id => "description", :class => "form-control", :rows => "3", :style => "padding-bottom: 15px" %>
   </div>
   <div class="actions">
-    <%= f.submit %>
+    <%= f.submit :id => "submit", :class => "btn btn-defaul", :style => "margin: 10px"%>
   </div>
 <% end %>

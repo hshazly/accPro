@@ -1,9 +1,25 @@
-<h1>Listing transactions</h1>
+<%= stylesheet_link_tag 'dashboard'%>
 
-<table>
+
+<div class="container-fluid">
+	<div class="row">
+        <div class="col-sm-3 col-md-2 sidebar">
+          <ul class="nav nav-sidebar">
+            <li class="active"><%= link_to "Overview", accounts_dashboard_path %></a></li>
+            <li><%= link_to 'Profile', edit_user_registration_path, :class => 'navbar-link' %> </li>
+            <li><%= link_to "Accounts", crud_accounts_path %></li>
+            <li><%= link_to "Transactions", transactions_path %></li>
+          </ul>
+</div>
+
+	<div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main" style="margin-top: 60px">
+	<h1 class="page-header" style="color: black">Transactions</h1>
+
+
+<table class="table">
   <tr>
-    <th>Dir1</th>
-    <th>Dir2</th>
+    <th>Direction1</th>
+    <th>Direction2</th>
     <th>Amount</th>
     <th>Description</th>
     <th></th>
@@ -23,5 +39,6 @@
 </table>
 
 <br />
-
 <%= link_to 'New Transaction', new_transaction_path %>
+</div>
+

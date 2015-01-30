@@ -1,10 +1,55 @@
-<h2> Welcome to AccPro</h2>
 
-<%=  link_to 'Show Balance Sheet' , accounts_show_balance_path , :id => 'show_balance' %>
-<br/>
-<%=  link_to 'Add New Account' , accounts_new_path %>
-<br/>
-<%=  link_to 'Make Transaction' , new_transaction_path %>
-<br/>
-<%=  link_to 'Show Transactions History' , transactions_path %>
+    <!-- Carousel
+    ================================================== -->
+    <div id="myCarousel" class="carousel slide" data-ride="carousel" >
+      <!-- Indicators -->
+      <ol class="carousel-indicators">
+        <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+        <li data-target="#myCarousel" data-slide-to="1"></li>
+        <li data-target="#myCarousel" data-slide-to="2"></li>
+      </ol>
+      <div class="carousel-inner" role="listbox">
+        <div class="item active">
+          <img style="min-width: 100%" src="assets/account0.jpg" alt="First slide">
+          <div class="container">
+            <div class="carousel-caption">
+              <h1 style="font-weight: bold">Manage your Accounts and Balances!</h1>
+              <p style="font-size: 20px">AccPro makes it very easy for you to manage your accounts and balances. You'll love it. Sign up Now!</p>
+            </div>
+          </div>
+        </div>
+        <div class="item">
+          <img style="min-width: 100%" src="assets/account2.jpg" alt="Second slide">
+          <div class="container">
+            <div class="carousel-caption">
+              <h1 style="font-weight: bold">Don't worry about making transactions!</h1>
+              <p style="font-size: 20px">AccPro powerful validation system makes it nearly impossible to make invalid transactions.</p>
+            </div>
+          </div>
+        </div>
+        <div class="item">
+          <img style="min-width: 100%" src="assets/account3.jpg" alt="Third slide">
+          <div class="container">
+            <div class="carousel-caption">
+              <h1 style="font-weight: bold">No More Archives and paper works!</h1>
+              <p style="font-size: 20px">AccPro enables you to view the history of you transactions and lists of your balance sheets.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div><!-- /.carousel -->
+
+
+	<div class="container marketing">
+      <hr class="featurette-divider">
+      <footer>
+        <p class="pull-right"><a href="#">Back to top</a></p>
+        <p>&copy; 2014 Team1 SaaS, NU. &middot; <a href="#">Privacy</a> &middot; <a href="#">Terms</a></p>
+      </footer>
+	</div>
+
+
+</html>
+
+
 

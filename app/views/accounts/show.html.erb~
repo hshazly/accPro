@@ -1,9 +1,27 @@
-<h2> Account: <%= @account.name %></h2>
+<%= stylesheet_link_tag 'dashboard'%>
 
-<div style="font-size:16px">
- Name : <%=@account.name %></td>
-<br/>
- Type : <%= @account.account_type %></td>
-<br/>
-Balance : <%= @account.balance %></td>
-</table>
+<div class="container-fluid">
+	<div class="row">
+        <div class="col-sm-3 col-md-2 sidebar">
+          <ul class="nav nav-sidebar">
+            <li class="active"><%= link_to "Overview", accounts_dashboard_path %></a></li>
+            <li><%= link_to 'Profile', edit_user_registration_path, :class => 'navbar-link' %> </li>
+            <li><%= link_to "Accounts", crud_accounts_path %></li>
+            <li><%= link_to "Transactions", transactions_path %></li>
+          </ul>
+</div>
+
+<div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main" style="margin-top: 60px">
+	<h1 class="page-header" style="color: black">Account: <%= @account.name %></h1>
+
+		<div style="font-size:16px">
+ 			<strong>Name:</strong> <%=@account.name %></br>
+ 			<strong>Type:</strong> <%= @account.account_type %></br>
+			<strong>Balance:</strong> <%= @account.balance %></br>
+			<%= link_to "Back", crud_accounts_path %>
+			</table>		
+		</div>
+		
+		
+</div>
+

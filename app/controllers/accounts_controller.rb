@@ -1,8 +1,15 @@
 class AccountsController < ApplicationController
 
-	def home_page 
-		
+	def index
+		@accounts = Account.all
 	end
+
+	def home_page 
+	end
+	
+	def dashboard
+	end
+	
 	
 	def show_balance
 		@accounts = Account.all

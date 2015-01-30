@@ -12,5 +12,15 @@
 //
 //= require jquery
 //= require jquery_ujs
-//= require twitter/bootstrap
+//= require bootstrap
 //= require_tree .
+/*
+function showAlert() {
+  $('#notice').addClass('in'); // shows alert with Bootstrap CSS3 implem
+});
+
+$('.close').click(function () {
+  $(this).parent().removeClass('in'); // hides alert with Bootstrap CSS3 implem
+});
+*/
+
