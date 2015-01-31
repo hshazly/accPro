@@ -11,6 +11,7 @@ Background: movies have been added to database
   | assets_account2 | 1000    | Asset        |
   | equity_account  | 1000    | Equity       |
 
+  And I am an authenticated user
   And I am on new transactions page
 
 
@@ -42,5 +43,5 @@ Scenario: show transaction history
 	Then I should go to show transactions page
 
 Scenario: return to home page
-	When I follow "Home"
+	When I follow "Dashboard"
 	Then I should go to the home page

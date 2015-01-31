@@ -14,6 +14,7 @@ Background: movies have been added to database
   | dir1 | dir2 | amount | description      | account1_id | account2_id | 
   | to   | to   | 500.0  | transaction_test | 1           | 2 |
 
+  And I am an authenticated user 	
   And I am on show transactions page
 
 
@@ -30,5 +31,5 @@ Scenario: return to home page
 	Then I should go to the home page
 	
 Scenario: make new transaction
-	When I follow "New transaction"
+	When I follow "New Transaction"
 	Then I should go to new transactions page	

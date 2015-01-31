@@ -1,3 +1,20 @@
+Given(/^I am an authenticated user$/) do
+    email = 'testing@man.net'
+  	password = 'secretpass'
+  	User.new(:email => email, :password => 		password, :password_confirmation => password).save!
+
+  	visit '/users/sign_in'
+  	fill_in "user_email", :with => email
+  	fill_in "user_password", :with => password
+  	click_button "Log in"
+end
+
+Then(/^I should sign out$/) do
+  user = User.first 
+  user.destroy
+end
+
+
 Given(/^the following accounts exist:$/) do |table|
 	table.hashes.each do |account|
     	Account.create(account)
@@ -21,6 +38,7 @@ Given /^PENDING/ do
 end
 
 Then(/^I should see add account$/) do
+   #puts page.body
    assert page.body =~ /(.*)Add New Account(.*)/m
 end
 
@@ -28,7 +46,7 @@ Then(/^I should see show balance$/) do
   assert page.body =~ /(.*)Show Balance Sheet(.*)/m
 end
 
-Then(/^I should see manage transactions$/) do
+Then(/^I should see make transactions$/) do
 	assert page.body =~ /(.*)Make Transaction(.*)/m
 end
 

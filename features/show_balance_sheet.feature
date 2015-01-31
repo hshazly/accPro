@@ -11,6 +11,7 @@ Background: accounts have been added to database
   | assets_account2 | 1000    | Asset        |
   | equity_account  | 1000    | Equity       |
 
+  And I am an authenticated user 	
   And I am on the balances page
 
 Scenario: view balance sheets
@@ -19,5 +20,5 @@ Scenario: view balance sheets
 	And I should see the following account_types: "Asset", "Asset", "Equity"
 	
 Scenario: return to the home page
-	When I follow "Home"
+	When I follow "Dashboard"
 	Then I should go to the home page	

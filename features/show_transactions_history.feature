@@ -14,6 +14,7 @@ Background: movies have been added to database
   | dir1 | dir2 | amount | description      | account1_id | account2_id | 
   | to   | to   | 500.0  | transaction_test | 1           | 2 |
 
+  And I am an authenticated user 	
   And I am on show transactions page
 
 
@@ -26,7 +27,7 @@ Scenario: show transaction history
 	And I should see "2"
 	
 Scenario: return to home page
-	When I follow "Home"
+	When I follow "Dashboard"
 	Then I should go to the home page
 	
 Scenario: make new transaction
