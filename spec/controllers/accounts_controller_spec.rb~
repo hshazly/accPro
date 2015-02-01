@@ -19,7 +19,10 @@ require 'spec_helper'
 # that an instance is receiving a specific message.
 
 RSpec.describe AccountsController, :type => :controller do
-
+          before(:all) do
+            @user = FactoryGirl.create(:user)
+            
+          end
   # This should return the minimal set of attributes required to create a valid
   # Account. As you add validations to Account, be sure to
   # adjust the attributes here as well.
@@ -37,6 +40,7 @@ RSpec.describe AccountsController, :type => :controller do
   let(:valid_session) { {} }
 
   describe "GET show_balance" do
+   
     it "assigns all accounts as @accounts" do
       get :show_balance, {}, valid_session
       expect(assigns(:accounts)).to eq(Account.all)
@@ -83,7 +87,7 @@ RSpec.describe AccountsController, :type => :controller do
 
       it "redirects to the created account" do
         post :create, {:sale => valid_attributes}, valid_session
-        expect(response).to redirect_to('')
+        expect(response).to redirect_to('/accounts')
       end
     end
   end

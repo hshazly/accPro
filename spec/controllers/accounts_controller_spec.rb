@@ -37,6 +37,7 @@ RSpec.describe AccountsController, :type => :controller do
   let(:valid_session) { {} }
 
   describe "GET show_balance" do
+   
     it "assigns all accounts as @accounts" do
       get :show_balance, {}, valid_session
       expect(assigns(:accounts)).to eq(Account.all)

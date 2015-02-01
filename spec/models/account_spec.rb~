@@ -2,6 +2,10 @@ require 'rails_helper'
 require 'spec_helper'
 
 RSpec.describe Account, :type => :model do
+        before(:all) do
+            @user = FactoryGirl.create(:user)
+            sign_in @user  
+          end
 
   let(:account) { FactoryGirl.create(:account) }
 
@@ -50,7 +54,7 @@ RSpec.describe Account, :type => :model do
 
      it "should work for more than one account_type" do
         results=Account.get_account_type_balance(["Asset","Expense"])
-        expect(results).to eq(25000)
+        expect(results).to eq(105000.0)
      end
   end
 
