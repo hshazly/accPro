@@ -3040,7 +3040,7 @@ fieldset[disabled] .btn {
 }
 .btn-default.disabled,
 .btn-default[disabled],
-fieldset[disabled] .btn-default,
+fieldset[disabled],
 .btn-default.disabled:hover,
 .btn-default[disabled]:hover,
 fieldset[disabled] .btn-default:hover,
@@ -5820,33 +5820,6 @@ button.close {
     width: 900px;
   }
 }
-
-/* Footer
--------------------------------------------------- */
-
-.footer {
-  text-align: center;
-  padding: 30px 0;
-  margin-top: 70px;
-  border-top: 1px solid #e5e5e5;
-  background-color: #f5f5f5;
-}
-.footer p {
-  margin-bottom: 0;
-  color: #777;
-}
-.footer-links {
-  margin: 10px 0;
-}
-.footer-links li {
-  display: inline;
-  padding: 0 2px;
-}
-.footer-links li:first-child {
-  padding-left: 0;
-}
-
-
 .tooltip {
   position: absolute;
   z-index: 1070;
